@@ -5,8 +5,6 @@ declare(strict_types=1);
 
 namespace Dadeit1987\EserciziPhp\Controllers;
 
-require '/var/www/esercizi_php/vendor/autoload.php';
-
 /**
  * @property string $first_name
  * @property string $last_name
@@ -50,7 +48,7 @@ class Man
     }
 
     //mutator se fosse Laravel
-    public function setAge(int $age)
+    public function setAge(int $age): void
     {
         $this->age=$age;
     }
@@ -62,7 +60,7 @@ class Man
         return true;
     }
 
-    public function isAdultIfCondition()
+    public function isAdultIfCondition(): bool
     {
         // questa sintassi è migliore di if else
         if($this->age > 18) {

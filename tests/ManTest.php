@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-require '/var/www/esercizi_php/vendor/autoload.php';
-
 use PHPUnit\Framework\TestCase;
-use Dadeit1987\EserciziPhp\Extras\Man;
+use Dadeit1987\EserciziPhp\Controllers\Man;
 
 final class ManTest extends TestCase
 {

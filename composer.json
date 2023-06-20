@@ -17,5 +17,8 @@
     },
     "scripts": {
         "test": "./vendor/bin/phpunit tests/"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
     }
 }

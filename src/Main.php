@@ -5,15 +5,15 @@ declare(strict_types=1);
 
 namespace Dadeit1987\EserciziPhp;
 
-require '/var/www/esercizi_php/vendor/autoload.php';
-
 use Dadeit1987\EserciziPhp\Controllers\Man;
 use Dadeit1987\EserciziPhp\Controllers\Marine;
 
 class Main
 {
-    public static function main(): void
+    public static function start(): void
     {
+
+        var_dump($_ENV);
 
         var_dump(Man::staticTest());
 
@@ -43,5 +43,3 @@ class Main
 
     }
 }
-
-Main::main();

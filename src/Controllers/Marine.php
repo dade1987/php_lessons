@@ -5,9 +5,7 @@ declare(strict_types=1);
 
 namespace Dadeit1987\EserciziPhp\Controllers;
 
-require  '/var/www/esercizi_php/vendor/autoload.php';
-
-use Dadeit1987\EserciziPhp\Extras\Exercise002;
+use Dadeit1987\EserciziPhp\Controllers\Exercise002;
 
 /**
 * @property int $max_pushups
