@@ -27,7 +27,6 @@ final class ManTest extends TestCase
 
         $this->assertNotEquals(false, $man_object->isAdultIfCondition());
 
-
         $this->assertEquals(true, $man_object->isAdultTernaryCondition());
 
         $this->assertNotEquals(false, $man_object->isAdultTernaryCondition());
@@ -40,6 +39,18 @@ final class ManTest extends TestCase
         $this->assertNotEquals('high', $man_object->senioritySwitch());
 
         $this->assertEquals('adult', $man_object->senioritySwitch());
+
+    }
+
+    public function testCycles(): void
+    {
+        $man_object=new Man('Davide', 'Cavallini', 5);
+
+        $this->assertEquals(5, count($man_object->forCycle()));
+
+        $this->assertNotEquals(4, count($man_object->forCycle()));
+
+        $this->assertNotEquals(6, count($man_object->forCycle()));
 
     }
 }

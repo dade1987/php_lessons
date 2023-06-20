@@ -1,1 +1,1 @@
-{"version":1,"defects":{"ManTest::testGreetsWithName":5,"ManTest::testFirstNameProperty":7,"ManTest::testSeniority":7},"times":{"ManTest::testGreetsWithName":0.001,"ManTest::testFirstNameProperty":0.002,"ManTest::testAge":0,"ManTest::testSeniority":0}}
+{"version":1,"defects":{"ManTest::testGreetsWithName":5,"ManTest::testFirstNameProperty":7,"ManTest::testSeniority":7},"times":{"ManTest::testGreetsWithName":0.001,"ManTest::testFirstNameProperty":0.002,"ManTest::testAge":0,"ManTest::testSeniority":0,"ManTest::testCycles":0}}

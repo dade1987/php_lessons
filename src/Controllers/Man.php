@@ -127,5 +127,16 @@ class Man
         return $seniority;
     }
 
+    public function forCycle(): array
+    {
+        $array = [];
+
+        for($i=1;$i<=$this->age;$i++) {
+            $array[]=$i;
+        }
+
+        return $array;
+    }
+
 
 }
