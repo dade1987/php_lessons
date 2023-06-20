@@ -1,0 +1,3 @@
+composer init
+
+composer dump-autoload se cambia psr-4 (namespaces)

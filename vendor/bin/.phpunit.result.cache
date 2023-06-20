@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ManTest::testGreetsWithName":5,"ManTest::testFirstNameProperty":8},"times":{"ManTest::testGreetsWithName":0.001,"ManTest::testFirstNameProperty":0.002}}

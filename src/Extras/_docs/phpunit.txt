@@ -1,0 +1,10 @@
+composer require --dev phpunit/phpunit
+
+TEST VANNO SEPARATI DALLA LOGICA
+./vendor/bin/phpunit tests/
+
+AGGIUNGERE I TEST CON COMPOSER
+In composer.json
+"scripts": {
+        "test": "./vendor/bin/phpunit tests/"
+}
