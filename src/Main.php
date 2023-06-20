@@ -3,12 +3,12 @@
 //dà type error se passi tipi sbagliati
 declare(strict_types=1);
 
-namespace Dadeit1987\EserciziPhp\Extras;
+namespace Dadeit1987\EserciziPhp;
 
 require '/var/www/esercizi_php/vendor/autoload.php';
 
-use Dadeit1987\EserciziPhp\Extras\Man;
-use Dadeit1987\EserciziPhp\Extras\Marine;
+use Dadeit1987\EserciziPhp\Controllers\Man;
+use Dadeit1987\EserciziPhp\Controllers\Marine;
 
 class Main
 {
