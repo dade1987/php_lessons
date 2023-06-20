@@ -138,5 +138,29 @@ class Man
         return $array;
     }
 
+    public function whileCycle(): array
+    {
+        $array = [];
+        $i=1;
+
+        while($i<=$this->age) {
+            $array[]=$i;
+
+            $i++;
+        }
+
+        return $array;
+    }
+
+    public static function foreachCycle(array $items): array
+    {
+
+        foreach($items as $index=>$value) {
+            $array[$index]=$value;
+        }
+
+        return $array;
+    }
+
 
 }

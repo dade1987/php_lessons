@@ -52,5 +52,21 @@ final class ManTest extends TestCase
 
         $this->assertNotEquals(6, count($man_object->forCycle()));
 
+        $man_object->setAge(10);
+
+        $this->assertEquals(10, count($man_object->whileCycle()));
+
+        $this->assertNotEquals(9, count($man_object->whileCycle()));
+
+        $this->assertNotEquals(11, count($man_object->whileCycle()));
+
+        $items=[1,2,3,4];
+
+        $this->assertEquals(4, count($man_object->foreachCycle($items)));
+
+        $this->assertNotEquals(3, count($man_object->foreachCycle($items)));
+
+        $this->assertNotEquals(5, count($man_object->foreachCycle($items)));
+
     }
 }
