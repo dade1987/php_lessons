@@ -33,6 +33,13 @@ class Man
         $this->last_name = $last_name;
         $this->age = $age;
         $this->built_number = 1;
+
+        //print "Constructing " . __CLASS__ . "\n";
+    }
+
+    public function __destruct()
+    {
+        //print "Destroying " . __CLASS__ . "\n";
     }
 
     //accessor se fosse Laravel
@@ -63,11 +70,61 @@ class Man
     public function isAdultIfCondition(): bool
     {
         // questa sintassi è migliore di if else
-        if($this->age > 18) {
+        if($this->age >= 18) {
             return true;
         }
 
         return false;
+    }
+
+    public function isAdultTernaryCondition(): bool
+    {
+        // questa sintassi è migliore di if else
+        return $this->age >= 18 ? true : false;
+    }
+
+    public function senioritySwitch(): string
+    {
+
+        switch (true) {
+            case $this->age <= 3:
+                $seniority = 'newborn';
+                break;
+
+            case $this->age <= 5:
+                $seniority = 'kindergarten';
+                break;
+
+            case $this->age <= 10:
+                $seniority = 'elementary';
+                break;
+
+            case $this->age <= 13:
+                $seniority = 'middle';
+                break;
+
+            case $this->age <= 18:
+                $seniority = 'high';
+                break;
+
+            case $this->age <= 35:
+                $seniority = 'adult';
+                break;
+
+            case  $this->age <= 60:
+                $seniority = 'elderly';
+                break;
+
+            case  $this->age <= 85:
+                $seniority = 'old';
+                break;
+
+            default:
+                $seniority = 'decrepit';
+                break;
+        }
+
+        return $seniority;
     }
 
 

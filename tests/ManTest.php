@@ -14,12 +14,32 @@ final class ManTest extends TestCase
         $this->assertEquals('Davide', $man_object->first_name);
 
         $this->assertNotEquals('Luigi', $man_object->first_name);
+    }
+
+    public function testAge(): void
+    {
+
+        $man_object=new Man('Davide', 'Cavallini', 25);
+
+        $man_object->setAge(18);
 
         $this->assertEquals(true, $man_object->isAdultIfCondition());
 
-        $man_object->setAge(15);
+        $this->assertNotEquals(false, $man_object->isAdultIfCondition());
 
-        $this->assertNotEquals(true, $man_object->isAdultIfCondition());
+
+        $this->assertEquals(true, $man_object->isAdultTernaryCondition());
+
+        $this->assertNotEquals(false, $man_object->isAdultTernaryCondition());
+    }
+
+    public function testSeniority(): void
+    {
+        $man_object=new Man('Davide', 'Cavallini', 25);
+
+        $this->assertNotEquals('high', $man_object->senioritySwitch());
+
+        $this->assertEquals('adult', $man_object->senioritySwitch());
 
     }
 }
