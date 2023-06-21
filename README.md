@@ -9,4 +9,4 @@ In virtual host configuration, or localhost configuration, or httpd.conf or apac
 </Directory>
 ```
 
-Inserire il file .htaccess nella root document di Apache
+Insert .htaccess in the Apache document root folder
