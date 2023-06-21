@@ -6,24 +6,26 @@
 </div>
 <div class="row mt-5">
     <div class="col-md-12">
-        <table class="table table-striped table-hover">
-            <?php
-            /**
-             * @var array<string,array<string,string>> $view_params
-             * @var array<string,array<string,string>> $params
-             */
-            $params = $view_params;
+        <?php
+        /**
+         * @var array<string,array<string,string>> $view_params
+         * @var array<string,array<string,string>> $params
+         */
+        $params = $view_params;
 
-            foreach ($params as $index => $value) { ?>
+        foreach ($params as $index => $value) { ?>
 
-                <tr>
-                    <?php foreach ($value as $i => $v) { ?>
-                        <td><?php echo  $v; ?></td>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo  $value['stringa']; ?></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
 
-                    <?php } ?>
-                </tr>
+        <?php } ?>
 
-            <?php } ?>
+
         </table>
     </div>
 </div>
