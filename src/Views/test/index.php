@@ -7,7 +7,13 @@
 <div class="row mt-5">
     <div class="col-md-12">
         <table class="table table-striped table-hover">
-            <?php foreach ($view_params['table'] as $index => $value) { ?>
+            <?php
+            /**
+             * @var array<string,array<string,array<string,string>>> $params
+             */
+            $params = $view_params;
+
+            foreach ($params['table'] as $index => $value) { ?>
                 <tr>
                     <?php foreach ($value as $i => $v) { ?>
                         <td><?php echo $v ?></td>

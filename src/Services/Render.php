@@ -8,7 +8,7 @@ namespace Dadeit1987\EserciziPhp\Services;
 class Render
 {
     /**
-     * @param array<string,mixed> $view_params
+     * @param array<mixed,mixed> $view_params
      */
     public static function view(string $path, array $view_params): void
     {

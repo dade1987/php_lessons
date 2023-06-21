@@ -15,6 +15,7 @@ class Test
     public function index(): void
     {
         $orm=new Orm();
+        $view_params=[];
         $view_params['table']=$orm->select('test')->where([['stringa','LIKE','%stringa%'], ['stringa','!=','zero']])->get();
         $view_params['request']=$_GET;
         $view_params['sql']=$orm->getSql();
@@ -26,9 +27,10 @@ class Test
     public function show(string $test): void
     {
         $view_params=[];
-        $view_params['id']=$test;
-        $view_params['request']=join(',', $_REQUEST);
-        $view_params['custom']='what you want';
+
+        $orm=new Orm();
+        $view_params=$orm->select('test')->where([['id','=',$test]])->get();
+
 
         Render::view('test/show', $view_params);
     }

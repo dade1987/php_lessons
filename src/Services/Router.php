@@ -8,17 +8,20 @@ namespace Dadeit1987\EserciziPhp\Services;
 class Router
 {
     //devi passare route e controller
-    public static function get(string $url, string $controller, string $method)
+    public static function get(string $url, string $controller, string $method): void
     {
         self::registerRoutes($url, $controller, $method, $_GET);
     }
 
-    public static function post(string $url, string $controller, string $method)
+    public static function post(string $url, string $controller, string $method): void
     {
         self::registerRoutes($url, $controller, $method, $_POST);
     }
 
-    public static function registerRoutes(string $url, string $controller, string $method, array $request)
+    /**
+     * @param array<string,mixed> $request
+     */
+    public static function registerRoutes(string $url, string $controller, string $method, array $request): void
     {
         $request_uri = $_SERVER['REQUEST_URI'];
 
@@ -29,6 +32,10 @@ class Router
         $url_parsed = parse_url($url, PHP_URL_PATH);
 
         if(null==$url_parsed) {
+            throw new \Exception('router url_parsed is null');
+        }
+
+        if(null==$request_uri_parsed) {
             throw new \Exception('router url_parsed is null');
         }
 
