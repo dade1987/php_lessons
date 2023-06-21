@@ -7,22 +7,28 @@ namespace Dadeit1987\EserciziPhp\Controllers;
 use Dadeit1987\EserciziPhp\Services\Render;
 
 /**
-* @property int $test
+* @property string $test
 */
 class Test
 {
-    private int $test;
+    private string $test;
 
-    public function __construct(int $test)
-    {
-        $this->test=$test;
-    }
 
-    public function show(): void
+    public function index(): void
     {
 
         $view_params=[];
-        $view_params['id']=$this->test;
+        $view_params['test01']='valore01';
+        $view_params['test02']='valore02';
+        $view_params['test03']='valore03';
+        Render::view('test/index', $view_params);
+    }
+
+    public function show(string $test): void
+    {
+
+        $view_params=[];
+        $view_params['id']=$test;
         $view_params['request']=join(',', $_REQUEST);
         $view_params['custom']='what you want';
 

@@ -13,4 +13,8 @@ require BASE_DIR.'/vendor/autoload.php';
 $dotenv = Dotenv::createImmutable(BASE_DIR);
 $dotenv->load();
 
-Router::get('/test/{test}', Test::class, 'show');
+
+
+Router::get('/tests/{test}', Test::class, 'show');
+
+Router::get('/tests', Test::class, 'index');

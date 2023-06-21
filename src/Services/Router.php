@@ -42,6 +42,7 @@ class Router
                 if(substr($value, 0, 1) == "{") {
 
                     if(is_numeric($request_uri_parsed_exploded[$index])) {
+
                         $params[substr($value, 1, -1)]=$request_uri_parsed_exploded[$index];
                     } else {
                         exit;
@@ -49,9 +50,11 @@ class Router
                 }
             }
 
-            $controller_object = new $controller(extract($params));
+            //var_dump($request_uri_parsed_exploded, $url_parsed_exploded);
 
-            $controller_object->show();
+            $controller_object = new $controller();
+
+            $controller_object->$method(...array_values($params));
 
 
         }
