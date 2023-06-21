@@ -16,9 +16,9 @@
 
             foreach ($params['table'] as $index => $value) { ?>
                 <tr>
-                    <?php foreach ($value as $i => $v) { ?>
-                        <td><?php echo $v ?></td>
-                    <?php } ?>
+                    <td><?php echo $value['id'] ?></td>
+                    <td><a href="./tests/<?php echo $value['id']; ?>" target="_blank"><?php echo $value['title']; ?></a></td>
+
                 </tr>
             <?php } ?>
         </table>
