@@ -8,8 +8,14 @@ namespace Dadeit1987\EserciziPhp\Services;
 class Orm
 {
     private \mysqli $mysqli;
-    private array $data;
+
+    /**
+     * @var  array<array<string,string>> $data
+     */    private array $data;
     private string $sql;
+    /**
+     * @var array<array<int,mixed>> $params
+     */
     private array $params=[];
     public function __construct()
     {
@@ -39,6 +45,9 @@ class Orm
         return $this;
     }
 
+    /**
+     * @param array<array<int,string>> $params
+     */
     public function where(array $params): self
     {
         $this->params=$params;
@@ -65,6 +74,9 @@ class Orm
     }
 
 
+    /**
+     * @return array<array<string,string>>
+     */
     public function get(): array
     {
         $types='';
@@ -105,6 +117,7 @@ class Orm
 
         $this->data = $result->fetch_all(MYSQLI_ASSOC);
 
+
         return $this->data;
     }
 
@@ -113,6 +126,9 @@ class Orm
         return $this->sql;
     }
 
+    /**
+     * @return array<array<int,mixed>>
+     */
     public function getSqlParams(): array
     {
         return $this->params;

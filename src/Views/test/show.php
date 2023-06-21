@@ -9,6 +9,7 @@
         <table class="table table-striped table-hover">
             <?php
             /**
+             * @var array<string,array<string,string>> $view_params
              * @var array<string,array<string,string>> $params
              */
             $params = $view_params;
