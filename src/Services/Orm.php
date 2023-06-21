@@ -102,4 +102,9 @@ class Orm
     {
         return $this->sql;
     }
+
+    public function getSqlParams(): array
+    {
+        return $this->params;
+    }
 }

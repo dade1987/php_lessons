@@ -37,4 +37,14 @@
         <?php echo $view_params['sql'] ?>
     </pre>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Sql Params</h3>
+    </div>
+</div>
+<div class="row">
+    <pre class="bg-light ml-3">
+        <?php echo  var_export($view_params['sql_params'], true); ?>
+    </pre>
+</div>
 <?php require_once(BASE_VIEWS . '/layouts/footer.php'); ?>

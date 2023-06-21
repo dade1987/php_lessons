@@ -18,6 +18,7 @@ class Test
         $view_params['table']=$orm->select('test')->where([['stringa','LIKE','%stringa%'], ['stringa','!=','zero']])->get();
         $view_params['request']=$_GET;
         $view_params['sql']=$orm->getSql();
+        $view_params['sql_params']=$orm->getSqlParams();
 
         Render::view('test/index', $view_params);
     }
