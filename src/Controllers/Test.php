@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Dadeit1987\EserciziPhp\Controllers;
 
+use Dadeit1987\EserciziPhp\Services\Render;
+
 /**
 * @property int $test
 */
@@ -21,8 +23,10 @@ class Test
 
         $view_params=[];
         $view_params['id']=$this->test;
-        $view_params['request']=$_REQUEST;
-        require_once(BASE_DIR.'/src/Views/test/show.php');
+        $view_params['request']=join(',', $_REQUEST);
+        $view_params['custom']='what you want';
+
+        Render::view('test/show', $view_params);
     }
 
 
