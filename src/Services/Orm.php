@@ -55,7 +55,7 @@ class Orm
                 if($i!=0) {
                     $this->sql .= " AND ";
                 }
-                $this->sql .= "$param[0]$param[1]?" ;
+                $this->sql .= " $param[0] $param[1] ? " ;
                 $i++;
 
             }
@@ -96,5 +96,10 @@ class Orm
         $this->data = $result->fetch_all(MYSQLI_ASSOC);
 
         return $this->data;
+    }
+
+    public function getSql(): string
+    {
+        return $this->sql;
     }
 }
