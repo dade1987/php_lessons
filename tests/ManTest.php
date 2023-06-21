@@ -69,4 +69,5 @@ final class ManTest extends TestCase
         $this->assertNotEquals(5, count($man_object->foreachCycle($items)));
 
     }
+
 }

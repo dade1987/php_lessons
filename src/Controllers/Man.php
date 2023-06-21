@@ -162,5 +162,12 @@ class Man
         return $array;
     }
 
+    public function render()
+    {
+        $age=$this->age;
+
+        require_once(BASE_DIR.'/src/Views/man/index.php');
+    }
+
 
 }
