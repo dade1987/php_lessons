@@ -1,4 +1,4 @@
-<?php require_once(BASE_VIEWS.'/layouts/header.php'); ?>
+<?php require_once(BASE_VIEWS . '/layouts/header.php'); ?>
 <div class="row">
     <div class="col-md-12">
         <h1>Tabella di Test Index</h1>
@@ -8,15 +8,14 @@
     <div class="col-md-12">
         <table class="table table-striped table-hover">
             <?php foreach ($view_params as $index => $value) { ?>
-
                 <tr>
-                    <td><?php echo $index; ?></td>
-                    <td><?php echo $value; ?></td>
+                    <?php foreach ($value as $i => $v) { ?>
+                        <td><?php echo $v ?></td>
+                    <?php } ?>
                 </tr>
-
             <?php } ?>
         </table>
     </div>
 </div>
 </div>
-<?php require_once(BASE_VIEWS.'/layouts/footer.php'); ?>
+<?php require_once(BASE_VIEWS . '/layouts/footer.php'); ?>

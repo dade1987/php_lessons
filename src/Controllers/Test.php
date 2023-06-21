@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dadeit1987\EserciziPhp\Controllers;
 
+use Dadeit1987\EserciziPhp\Services\Orm;
 use Dadeit1987\EserciziPhp\Services\Render;
 
 /**
@@ -11,22 +12,16 @@ use Dadeit1987\EserciziPhp\Services\Render;
 */
 class Test
 {
-    private string $test;
-
-
     public function index(): void
     {
+        $orm=new Orm();
+        $view_params=$orm->select('test')/*->where([['stringa','=','stringa2'], ['stringa','!=','zero']])*/->get();
 
-        $view_params=[];
-        $view_params['test01']='valore01';
-        $view_params['test02']='valore02';
-        $view_params['test03']='valore03';
         Render::view('test/index', $view_params);
     }
 
     public function show(string $test): void
     {
-
         $view_params=[];
         $view_params['id']=$test;
         $view_params['request']=join(',', $_REQUEST);
