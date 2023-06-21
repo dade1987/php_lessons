@@ -72,6 +72,10 @@ class Orm
 
         $stmt = $this->mysqli->prepare($this->sql);
 
+        if(null==$stmt) {
+            throw new \Exception('sql stmt is null');
+        }
+
         if(count($this->params)>0) {
             foreach($this->params as  $value) {
                 if(is_string($value[2])) {
@@ -92,6 +96,12 @@ class Orm
         $stmt->execute();
 
         $result = $stmt->get_result();
+
+
+        if(null==$result) {
+            throw new \Exception('sql result is null');
+        }
+
 
         $this->data = $result->fetch_all(MYSQLI_ASSOC);
 

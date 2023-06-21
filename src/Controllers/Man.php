@@ -127,7 +127,10 @@ class Man
         return $seniority;
     }
 
-    public function forCycle(): array
+    /**
+     * @return array<int, int>
+     */
+    public function forCycle()
     {
         $array = [];
 
@@ -138,7 +141,10 @@ class Man
         return $array;
     }
 
-    public function whileCycle(): array
+    /**
+         * @return array<int, int>
+         */
+    public function whileCycle()
     {
         $array = [];
         $i=1;
@@ -152,21 +158,20 @@ class Man
         return $array;
     }
 
-    public static function foreachCycle(array $items): array
+    /**
+     * @param array<mixed, mixed> $items
+     * @return array<mixed, mixed>
+     */
+    public static function foreachCycle($items)
     {
+
+        $array=[];
 
         foreach($items as $index=>$value) {
             $array[$index]=$value;
         }
 
         return $array;
-    }
-
-    public function render()
-    {
-        $age=$this->age;
-
-        require_once(BASE_DIR.'/src/Views/man/index.php');
     }
 
 

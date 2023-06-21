@@ -28,6 +28,10 @@ class Router
 
         $url_parsed = parse_url($url, PHP_URL_PATH);
 
+        if(null==$url_parsed) {
+            throw new \Exception('router url_parsed is null');
+        }
+
         preg_match_all('/\{([^{}]+)\}/', $url_parsed, $matches);
 
         $request_uri_parsed_exploded=explode('/', $request_uri_parsed);
